@@ -18,6 +18,27 @@
         <module>demo-core</module>
     <module>demo-web</module>
     </modules>
+		<scm>
+		<url>https://github.com/pavankumarkunta/MulitModuleSample</url>
+		<connection>scm:git:https://github.com/pavankumarkunta/MulitModuleSample.git</connection>
+		<developerConnection>scm:git:https://github.com/pavankumarkunta/MulitModuleSample.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
+	<distributionManagement>
+		<downloadUrl>https://github.com/pavankumarkunta/MulitModuleSample</downloadUrl>
+		<repository>
+			<id>release</id>
+			<name>Cloudbees release repository</name>
+			<!-- Webdav repository url are prefixed with dav: -->
+			<url>dav:https://repository-bfds.forge.cloudbees.com/release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot</id>
+			<name>Cloudbees snapshot repository</name>
+			<url>dav:https://repository-bfds.forge.cloudbees.com/snapshot/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
     <repositories>
         <repository>
             <id>spring-maven-release</id>
@@ -34,6 +55,29 @@
             <name>Spring Roo Repository</name>
             <url>http://spring-roo-repository.springsource.org/release</url>
         </repository>
+		<!-- Cloudbees maven repositories for releases and snapshots -->
+		<repository>
+			<id>release</id>
+			<name>Cloudbees release repository</name>
+			<url>https://repository-bfds.forge.cloudbees.com/release/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>snapshot</id>
+			<name>Cloudbees snapshot repository</name>
+			<url>https://repository-bfds.forge.cloudbees.com/snapshot/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -161,6 +205,15 @@
         </dependencies>
     </dependencyManagement>
     <build>
+	<extensions>
+			<!-- Extension required to deploy a snapshot or a release to the CloudBees 
+				remote maven repository using Webdav -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
         <pluginManagement>
             <plugins>
                 <plugin>
