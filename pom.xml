@@ -59,7 +59,7 @@
 		<repository>
 			<id>release</id>
 			<name>Cloudbees release repository</name>
-			<url>dav:https://repository-bfds.forge.cloudbees.com/release/</url>
+			<url>dav:https://repository-bfds.forge.cloudbees.com/release</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -70,7 +70,7 @@
 		<repository>
 			<id>snapshot</id>
 			<name>Cloudbees snapshot repository</name>
-			<url>dav:https://repository-bfds.forge.cloudbees.com/snapshot/</url>
+			<url>dav:https://repository-bfds.forge.cloudbees.com/snapshot</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -101,6 +101,11 @@
             <groupId>org.springframework.roo</groupId>
             <artifactId>org.springframework.roo.annotations</artifactId>
         </dependency>
+		<dependency>
+				<groupId>sqlrecorder</groupId>
+				<artifactId>sqlrecorder</artifactId>
+				<version>0.2</version>
+			</dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -202,11 +207,7 @@
                 <artifactId>spring-tx</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-			<dependency>
-				<groupId>sqlrecorder</groupId>
-				<artifactId>sqlrecorder</artifactId>
-				<version>0.2</version>
-			</dependency>
+			
         </dependencies>
     </dependencyManagement>
     <build>
@@ -214,9 +215,12 @@
 			<!-- Extension required to deploy a snapshot or a release to the CloudBees 
 				remote maven repository using Webdav -->
 			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-webdav</artifactId>
-				<version>1.0-beta-2</version>
+				
+	<groupId>org.apache.maven.wagon</groupId>
+	<artifactId>wagon-webdav-jackrabbit</artifactId>
+	<version>2.2</version>
+
+            
 			</extension>
 		</extensions>
         <pluginManagement>
