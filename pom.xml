@@ -4,7 +4,7 @@
     <groupId>com.dst.demo</groupId>
     <artifactId>demo-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.1</version>
+    <version>0.1.2-SNAPSHOT</version>
     <name>demo-parent</name>
     <properties>
         <aspectj.version>1.7.0.RC1</aspectj.version>
@@ -22,7 +22,7 @@
 		<url>https://github.com/pavankumarkunta/TestDeploy</url>
 		<connection>scm:git:https://github.com/pavankumarkunta/TestDeploy.git</connection>
 		<developerConnection>scm:git:https://github.com/pavankumarkunta/TestDeploy.git</developerConnection>
-	  <tag>SAMPLE-0.1.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 	<distributionManagement>
 		<downloadUrl>https://github.com/pavankumarkunta/TestDeploy</downloadUrl>
