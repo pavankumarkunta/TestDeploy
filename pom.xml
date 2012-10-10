@@ -59,7 +59,7 @@
 		<repository>
 			<id>release</id>
 			<name>Cloudbees release repository</name>
-			<url>dav:https://repository-bfds.forge.cloudbees.com/release</url>
+			<url>https://repository-bfds.forge.cloudbees.com/release</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -70,7 +70,7 @@
 		<repository>
 			<id>snapshot</id>
 			<name>Cloudbees snapshot repository</name>
-			<url>dav:https://repository-bfds.forge.cloudbees.com/snapshot</url>
+			<url>https://repository-bfds.forge.cloudbees.com/snapshot</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
